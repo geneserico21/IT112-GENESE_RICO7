@@ -1,0 +1,86 @@
+#include <stdio.h>
+
+    double add(double num1, double num2)
+{
+    return num1 + num2;
+}
+    double subtract(double num1, double num2)
+{
+    return num1 - num2;
+}
+    double multiply(double num1, double num2)
+{
+    return num1 * num2;
+}
+    double divide(double num1, double num2)
+{
+    return num1 / num2;
+}
+int main(){
+    double firstNumber, secondNumber, result;
+    int choice;
+
+    do
+    {
+printf("Multiple Functions to Perform Arithmetic Operations\n");
+    printf("\n");
+    printf("Enter first number: ");
+    scanf("%lf", &firstNumber);
+    printf("Enter second number: ");
+    scanf("%lf", &secondNumber);
+ 
+    printf("\nChoose Operation:\n");
+    printf("[1] Addition\n");
+    printf("[2] Subtraction\n");
+    printf("[3] Multiplication\n");
+    printf("[4] Division\n");
+    printf("[5] Exit Program\n");
+
+    printf("\nEnter choice [1-5]: ");
+    scanf("%d", &choice);
+
+    switch (choice)
+{
+    case 1:
+    result = add(firstNumber, secondNumber);
+    printf("\n%.2f + %.2f = %.2f\n",
+    firstNumber, secondNumber, result);
+    break;
+
+    case 2:
+    result = subtract(firstNumber, secondNumber);
+    printf("\n%.2f - %.2f = %.2f\n",
+    firstNumber, secondNumber, result);
+    break;
+
+    case 3:
+    result = multiply(firstNumber, secondNumber);
+    printf("\n%.2f * %.2f = %.2f\n",
+    firstNumber, secondNumber, result);
+    break;
+
+    case 4:
+    if (secondNumber == 0)
+    {
+    printf("\nError: Cannot divide by zero.\n");
+    }
+    else
+    {
+    result = divide(firstNumber, secondNumber);
+    printf("\n%.2f / %.2f = %.2f\n",
+    firstNumber, secondNumber, result);
+    }
+    break;
+
+    case 5:
+    printf("\nExiting program...\n");
+    break;
+
+    default:
+    printf("\nInvalid choice. Please choose from 1 to 5.\n");
+        }
+
+    } while (choice != 5);
+  
+    return 0;
+}
